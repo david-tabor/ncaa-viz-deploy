@@ -84,8 +84,14 @@ function buildCharts(sample) {
         title: "OTU ID",
       },
       showlegend: false,
-      height: 400,
-      width: 1000,
+      height: 300,
+      width: 800,
+      margin: {
+        t: 20, //top margin
+        l: 20, //left margin
+        r: 20, //right margin
+        b: 20 //bottom margin
+        }
     };
     
     Plotly.newPlot('bubble', data, layout);
