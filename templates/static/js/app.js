@@ -20,9 +20,6 @@ function buildMetadata(sample) {
 
   }); // End promise
 
-    // BONUS: Build the Gauge Chart
-    // buildGauge(data.WFREQ);
-
 } // End buildMetadata()
 
 
@@ -92,21 +89,6 @@ function buildCharts(sample) {
     };
     
     Plotly.newPlot('bubble', data, layout);
-
-    // Build a Pie Chart
-    var data = [{
-      values: sampleData.sample_values.slice(0, 10),
-      labels: sampleData.otu_ids.slice(0, 10),
-      hovertext: sampleData.otu_labels.slice(0,10),
-      type: 'pie',
-    }];
-
-    var layout = {
-      height: 400,
-      width: 500,
-    };
-
-    Plotly.newPlot('pie', data, layout);
 
   });  // End promise
 } // End buildCharts()
