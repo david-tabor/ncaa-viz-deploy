@@ -84,7 +84,7 @@ function buildCharts(sample) {
         title: "OTU ID",
       },
       showlegend: false,
-      height: 600,
+      height: 400,
       width: 1000,
     };
     
