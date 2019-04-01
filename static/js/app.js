@@ -1,141 +1,230 @@
-function buildMetadata(sample) {
+function buildDataPanel() {
 
-  // Fetch the metadata for a sample
-  var dataURL = `/metadata/${sample}`;
-  d3.json(dataURL).then( function (sampleData) {
+  var selection = d3.select('#data-panel');
 
-    // Select the metadata panel element  
-    var selection = d3.select('#sample-metadata');
+  selection.append('div')
+    .text('Populated data panel with call to buildDataPanel()')
 
-    // Clear existing html
-    selection.html("");
-
-    // Populate panel with metadata
-    Object.entries(sampleData).forEach( entry => {
-      let key = entry[0];
-      let value = entry[1];
-      selection.append("div")
-        .text(`${key}: ${value}`)
-    }); // End .forEach
-
-  }); // End promise
-
-    // BONUS: Build the Gauge Chart
-    // buildGauge(data.WFREQ);
+  // // Fetch the metadata for a sample
+  // var dataURL = `/data/${sample}`;
+  // d3.json(dataURL).then( function (sampleData) {
+  //   // Select the metadata panel element  
+  //   var selection = d3.select('#sample-metadata');
+  //   // Clear existing html
+  //   selection.html("");
+  //   // Populate panel with metadata
+  //   Object.entries(sampleData).forEach( entry => {
+  //     let key = entry[0];
+  //     let value = entry[1];
+  //     selection.append("div")
+  //       .text(`${key}: ${value}`)
+  //   }); // End .forEach
+  // }); // End promise
 
 } // End buildMetadata()
 
+function buildChart() {
+    console.log("Called buildChart()")
+
+    // Store currently selected metrics
+    var xMetric = d3.select("#XMetricDD").node().value; 
+    var yMetric = d3.select("#YMetricDD").node().value; 
+    var bMetric = d3.select("#BMetricDD").node().value; 
+
+    // Load data and parse for plotting
+    d3.json("/data").then(data => {
+      console.log('In call to buildChart(), loaded data:', data);
+
+      // Parse x values for plotting and store in 'xPlotVals'
+      var xPlotVals = [];      
+      var xData = data[xMetric];
+      for (var key in xData) {xPlotVals.push(xData[key]);}
+      console.log('xPlotVals =', xPlotVals)
+
+      // Parse y values for plotting and store in 'yPlotVals'
+      var yPlotVals = [];      
+      var yData = data[yMetric];
+      for (var key in yData) {yPlotVals.push(yData[key]);}
+      console.log('yPlotVals =', yPlotVals)
+      
+      // Parse b values for plotting and store in 'bPlotVals'
+      var bPlotVals = [];      
+      var bData = data[bMetric];
+      for (var key in yData) {bPlotVals.push(bData[key]);}
+      console.log('bPlotVals =', bPlotVals)
+  
+      
+      // Parse names for plotting and store in 'nPlotVals'
+      var nPlotVals = [];      
+      var nData = data['team'];
+
+      console.log(data)
 
 
-// Minor adapation from https://gist.github.com/mjackson/5311256
-// This function is used as help to assign colors in bubble chart
-function hslToRgb(h, s, l) {
-  var r, g, b;
+      for (var key in nData) {nPlotVals.push(nData[key]);}
+      console.log('nPlotVals =', nPlotVals)
+  
+      // Build Bubble Chart
+      var trace1 = {
+        x: xPlotVals,
+        y: yPlotVals,
+        text: nPlotVals,
+        mode: 'markers',
+        marker: {
+          //color: colors,
+          size: bPlotVals,
+        }
+      };
 
-  if (s == 0) {
-    r = g = b = l; // achromatic
-  } else {
-    function hue2rgb(p, q, t) {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1/6) return p + (q - p) * 6 * t;
-      if (t < 1/2) return q;
-      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-      return p;
+      var plotData = [trace1];
+      
+      var layout = {
+        xaxis: {
+          title: xMetric,
+        },
+        yaxis: {
+          title: yMetric,
+        },
+        showlegend: false,
+        height: 600,
+        width: 1000,
+      };
+      
+      Plotly.newPlot('bubble', plotData, layout);  
+
+      
+    }); // End promise
+
+  // Fetch the sample data for the plots
+  // var dataURL = `/data`;
+  // d3.json(dataURL).then( function (sampleData) {
+
+  // // Build Bubble Chart
+  // var trace1 = {
+  //   x: sampleData.otu_ids,
+  //   y: sampleData.sample_values,
+  //   text: sampleData.otu_labels,
+  //   mode: 'markers',
+  //   marker: {
+  //     //color: colors,
+  //     size: sampleData.sample_values,
+  //   }
+  // };
+
+  //   var data = [trace1];
+    
+  //   var layout = {
+  //     xaxis: {
+  //       title: "OTU ID",
+  //     },
+  //     showlegend: false,
+  //     height: 600,
+  //     width: 1000,
+  //   };
+    
+  //   Plotly.newPlot('bubble', data, layout);
+
+  //});  // End promise
+} // End buildChart()
+
+function parseMetrics(rawMetricList) {
+// Input: List of column names from loaded csv
+// Output: List with non-metric items removed
+
+  // Define non-metric items
+  var excluded = [
+    'Team',
+    'Conference',
+  ]
+
+  // Define list to be eventually returned
+  var output = [];
+
+  // Compare each item in rawMetricList to each item in excluded
+  for (var i=0; i<rawMetricList.length; i++) {
+    var metric = rawMetricList[i];
+
+    // Test if metric is in the excluded list
+    var is_in_excluded = false;
+    for (var j=0; j<excluded.length; j++) {
+      if (excluded[j].trim() == metric.trim()) {is_in_excluded = true;}
     }
 
-    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-    var p = 2 * l - q;
-
-    r = hue2rgb(p, q, h + 1/3);
-    g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - 1/3);
+    // Append to output if not in excluded
+    if (!is_in_excluded) {output.push(metric);}
   }
 
-  return `rgb(${r*255}, ${g*255}, ${b*255})`
-  //return [ r * 255, g * 255, b * 255 ];
-}
-
-
-function buildCharts(sample) {
-  // Fetch the sample data for the plots
-  var dataURL = `/samples/${sample}`;
-  d3.json(dataURL).then( function (sampleData) {
-
-    // Build Bubble Chart
-
-    // Build colors array based on otu_id to assign colors to each bubble
-    // Colors are assigned from red to blue with increasing out_id
-    var hueRange = d3.max(sampleData.otu_ids) - d3.min(sampleData.otu_ids);
-    var colors = sampleData.otu_ids.map(x => hslToRgb(x/hueRange, 0.5, 0.5));
-
-    var trace1 = {
-      x: sampleData.otu_ids,
-      y: sampleData.sample_values,
-      text: sampleData.otu_labels,
-      mode: 'markers',
-      marker: {
-        color: colors,
-        size: sampleData.sample_values,
-      }
-    };
-
-    var data = [trace1];
-    
-    var layout = {
-      xaxis: {
-        title: "OTU ID",
-      },
-      showlegend: false,
-      height: 600,
-      width: 1000,
-    };
-    
-    Plotly.newPlot('bubble', data, layout);
-
-    // Build a Pie Chart
-    var data = [{
-      values: sampleData.sample_values.slice(0, 10),
-      labels: sampleData.otu_ids.slice(0, 10),
-      hovertext: sampleData.otu_labels.slice(0,10),
-      type: 'pie',
-    }];
-
-    var layout = {
-      height: 400,
-      width: 500,
-    };
-
-    Plotly.newPlot('pie', data, layout);
-
-  });  // End promise
-} // End buildCharts()
+  return output
+} // End define parseMetrics()
 
 function init() {
-  // Grab a reference to the dropdown select element
-  var selector = d3.select("#selDataset");
 
-  // Use the list of sample names to populate the select options
-  d3.json("/names").then((sampleNames) => {
-    sampleNames.forEach((sample) => {
-      selector
+  d3.json("/data").then(data => {
+    //console.log('In call to init(), loaded data:', data);
+    
+    // Create 'cols' as list of columns in loaded csv 
+    var cols = [];
+    for (var item in data) {cols.push(item);} 
+
+    // Create 'metrics' after parsing out non-metric items
+    // console.log(parseMetrics(cols));
+    var metrics = parseMetrics(cols);
+    
+    // Populate X-Axis Metric Dropdown
+    for (var i=0; i<metrics.length; i++) {
+      var metric = metrics[i];
+      d3.select('#XMetricDD')
         .append("option")
-        .text(sample)
-        .property("value", sample);
-    });
+        .text(metrics[i])
+        .property("value", metrics[i])
+    }
 
-    // Use the first sample from the list to build the initial plots
-    const firstSample = sampleNames[0];
-    buildCharts(firstSample);
-    buildMetadata(firstSample);
-  });
+    // Populate Y-Axis Metric Dropdown
+    for (var i=0; i<metrics.length; i++) {
+      var metric = metrics[i];
+      d3.select('#YMetricDD')
+        .append("option")
+        .text(metrics[i])
+        .property("value", metrics[i])
+    }
+
+
+    // Populate Bubble Metric Dropdown
+    for (var i=0; i<metrics.length; i++) {
+      var metric = metrics[i];
+      d3.select('#BMetricDD')
+        .append("option")
+        .text(metrics[i])
+        .property("value", metrics[i])
+    }
+
+    // Initial build of chart
+    buildChart(); 
+
+  }) // End promise
+} // End function init()
+
+function xMetricChanged() {
+  console.log("Call made to xMetricChanged()");
+  console.log("Rebuilding char with call to buildChart()");
+  buildChart();
 }
 
-function optionChanged(newSample) {
-  // Fetch new data each time a new sample is selected
-  buildCharts(newSample);
-  buildMetadata(newSample);
+function yMetricChanged() {
+  console.log("Call made to yMetricChanged()");
+  console.log("Rebuilding chart with call to buildChart()");
+  buildChart();
 }
+
+function bMetricChanged() {
+  console.log("Call made to bMetricChanged()");
+  console.log("Rebuilding chart with call to buildChart()");
+  buildChart();
+}
+
+
+
+
 
 // Initialize the dashboard
 init();
