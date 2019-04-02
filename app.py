@@ -6,6 +6,7 @@ from flask import Flask, jsonify, render_template
 app = Flask(__name__)
 
 data = pd.read_csv('db/sample_data.csv')
+time_data = pd.read_csv('db/sample_time_data.csv')
 
 
 @app.route("/")
@@ -14,11 +15,21 @@ def index():
     return render_template('index.html')
 
 @app.route("/data")
-def names():
+def seasondata():
     """Return data."""
+    return data.to_json ()
 
-    # Return a list of the column names (sample names)
-    return data.to_json()
+@app.route("/timedata")
+def timedata():
+    """Return data."""
+    return time_data.to_json ()
+
+
+@app.route("/timeseries")
+def timeseries():
+    """Return the homepage."""
+    return render_template('timeseries.html')
+
 
 if __name__ == "__main__":
     app.run()
