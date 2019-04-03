@@ -89,22 +89,9 @@ function buildChart() {
         width: 1000,
       };
 
+      if (yMetric == 'AP Rank') {layout['yaxis']['range'] = [26,0.5]}
 
       Plotly.newPlot('timeseries', traces, layout);  
-
-
-      // @TODO Iterate over distinct list of teams to generate traces
-
-      // @TODO Create plot with multiple traces
-
-
-
-
-
-
-
-
-
 
       
     }); // End promise

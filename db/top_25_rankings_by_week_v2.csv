@@ -1,0 +1,453 @@
+Week,Team,Wins,Losses,AP Rank,AP Points
+2,Duke Blue Devils,2,0,1,1606
+2,Kansas Jayhawks,1,0,2,1571
+2,Gonzaga Bulldogs,2,0,3,1478
+2,Virginia Cavaliers,2,0,4,1326
+2,Tennessee Volunteers,2,0,5,1306
+2,Nevada Wolf Pack,2,0,6,1277
+2,North Carolina Tar Heels,2,0,7,1260
+2,Villanova Wildcats,2,0,8,1139
+2,Auburn Tigers,2,0,9,1132
+2,Kentucky Wildcats,1,1,10,1054
+2,Michigan State Spartans,1,1,11,919
+2,Kansas State Wildcats,1,0,12,892
+2,Oregon Ducks,2,0,13,739
+2,Florida State Seminoles,2,0,14,731
+2,Syracuse Orange,2,0,15,673
+2,Virginia Tech Hokies,1,0,16,664
+2,Mississippi State Bulldogs,2,0,17,549
+2,Michigan Wolverines,2,0,18,486
+2,Clemson Tigers,2,0,19,350
+2,UCLA Bruins,2,0,20,340
+2,TCU Horned Frogs,2,0,21,323
+2,LSU Tigers,2,0,22,248
+2,Purdue Boilermakers,2,0,23,218
+2,Marquette Golden Eagles,2,0,24,155
+2,Buffalo Bulls,2,0,25,154
+3,Duke Blue Devils,3,0,1,1564
+3,Kansas Jayhawks,3,0,2,1510
+3,Gonzaga Bulldogs,3,0,3,1437
+3,Virginia Cavaliers,3,0,4,1299
+3,Tennessee Volunteers,3,0,5,1281
+3,Nevada Wolf Pack,3,0,6,1253
+3,North Carolina Tar Heels,4,0,7,1246
+3,Auburn Tigers,3,0,8,1123
+3,Michigan Wolverines,5,0,9,1021
+3,Kentucky Wildcats,3,1,10,980
+3,Michigan State Spartans,3,1,11,937
+3,Kansas State Wildcats,4,0,12,889
+3,Virginia Tech Hokies,4,0,13,849
+3,Florida State Seminoles,2,0,14,794
+3,Mississippi State Bulldogs,3,0,15,619
+3,Clemson Tigers,3,0,16,462
+3,UCLA Bruins,3,0,17,430
+3,TCU Horned Frogs,3,0,18,388
+3,LSU Tigers,4,0,19,358
+3,Iowa Hawkeyes,4,0,20,354
+3,Oregon Ducks,3,1,21,325
+3,Buffalo Bulls,3,0,22,240
+3,Ohio State Buckeyes,4,0,23,222
+3,Purdue Boilermakers,4,1,24,199
+3,Wisconsin Badgers,3,0,25,150
+4,Gonzaga Bulldogs,6,0,1,1590
+4,Kansas Jayhawks,5,0,2,1584
+4,Duke Blue Devils,5,1,3,1486
+4,Virginia Cavaliers,6,0,4,1396
+4,Nevada Wolf Pack,6,0,5,1329
+4,Tennessee Volunteers,4,1,6,1284
+4,Michigan Wolverines,6,0,7,1213
+4,Auburn Tigers,5,1,8,1129
+4,Michigan State Spartans,5,1,9,1111
+4,Kentucky Wildcats,5,1,10,1022
+4,North Carolina Tar Heels,6,1,11,943
+4,Kansas State Wildcats,6,0,12,936
+4,Virginia Tech Hokies,5,0,13,921
+4,Iowa Hawkeyes,5,0,14,599
+4,Florida State Seminoles,5,1,15,581
+4,Ohio State Buckeyes,6,0,16,511
+4,Texas Longhorns,5,1,17,486
+4,Oregon Ducks,4,1,18,439
+4,Purdue Boilermakers,5,1,19,387
+4,Texas Tech Red Raiders,6,0,20,380
+4,Buffalo Bulls,5,0,21,351
+4,Wisconsin Badgers,5,1,22,253
+4,Villanova Wildcats,5,2,23,217
+4,Maryland Terrapins,6,0,24,170
+4,Mississippi State Bulldogs,4,1,25,161
+5,Gonzaga Bulldogs,8,0,1,1578
+5,Kansas Jayhawks,6,0,2,1539
+5,Duke Blue Devils,7,1,3,1463
+5,Virginia Cavaliers,7,0,4,1367
+5,Michigan Wolverines,8,0,5,1339
+5,Nevada Wolf Pack,8,0,6,1300
+5,Tennessee Volunteers,6,1,7,1238
+5,Auburn Tigers,6,1,8,1154
+5,Kentucky Wildcats,7,1,9,1070
+5,Michigan State Spartans,6,2,10,915
+5,Florida State Seminoles,6,1,11,871
+5,Wisconsin Badgers,7,1,12,809
+5,Texas Tech Red Raiders,7,0,13,783
+5,North Carolina Tar Heels,6,2,14,782
+5,Virginia Tech Hokies,6,1,15,675
+5,Kansas State Wildcats,6,1,16,629
+5,Buffalo Bulls,7,0,17,515
+5,Iowa Hawkeyes,6,1,18,417
+5,Ohio State Buckeyes,7,1,19,385
+5,Arizona State Sun Devils,7,0,20,384
+5,Villanova Wildcats,6,2,21,356
+5,Mississippi State Bulldogs,6,1,22,243
+5,Maryland Terrapins,7,1,23,204
+5,Nebraska Cornhuskers,7,1,24,176
+5,Furman Paladins,8,0,25,101
+6,Kansas Jayhawks,8,0,1,1583
+6,Duke Blue Devils,9,1,2,1454
+6,Tennessee Volunteers,7,1,3,1421
+6,Gonzaga Bulldogs,9,1,4,1412
+6,Michigan Wolverines,10,0,5,1398
+6,Virginia Cavaliers,9,0,6,1384
+6,Nevada Wolf Pack,10,0,7,1283
+6,Auburn Tigers,8,1,8,1151
+6,Michigan State Spartans,8,2,9,1066
+6,Florida State Seminoles,8,1,10,991
+6,Texas Tech Red Raiders,8,0,11,914
+6,North Carolina Tar Heels,7,2,12,890
+6,Virginia Tech Hokies,8,1,13,833
+6,Buffalo Bulls,9,0,14,664
+6,Ohio State Buckeyes,8,1,15,621
+6,Wisconsin Badgers,8,2,16,599
+6,Villanova Wildcats,8,2,17,532
+6,Mississippi State Bulldogs,8,1,18,441
+6,Kentucky Wildcats,7,2,19,385
+6,Arizona State Sun Devils,7,1,20,351
+6,Marquette Golden Eagles,8,2,21,281
+6,Iowa Hawkeyes,7,2,22,208
+6,Furman Paladins,10,0,23,189
+6,Houston Cougars,8,0,24,173
+6,Indiana Hoosiers,8,2,25,118
+6,Kansas State Wildcats,6,2,25,118
+6,Syracuse Orange,7,2,25,118
+7,Kansas Jayhawks,9,0,1,1586
+7,Duke Blue Devils,9,1,2,1488
+7,Tennessee Volunteers,8,1,3,1464
+7,Michigan Wolverines,11,0,4,1442
+7,Virginia Cavaliers,9,0,5,1400
+7,Nevada Wolf Pack,11,0,6,1319
+7,Auburn Tigers,9,1,7,1156
+7,Gonzaga Bulldogs,9,2,8,1147
+7,North Carolina Tar Heels,8,2,9,1126
+7,Michigan State Spartans,9,2,10,1070
+7,Florida State Seminoles,8,1,11,949
+7,Texas Tech Red Raiders,10,0,12,912
+7,Virginia Tech Hokies,9,1,13,838
+7,Buffalo Bulls,10,0,14,684
+7,Ohio State Buckeyes,9,1,15,647
+7,Wisconsin Badgers,9,2,16,619
+7,Mississippi State Bulldogs,9,1,17,529
+7,Arizona State Sun Devils,8,1,18,415
+7,Kentucky Wildcats,8,2,19,377
+7,Marquette Golden Eagles,8,2,20,350
+7,Houston Cougars,10,0,21,266
+7,Indiana Hoosiers,9,2,22,226
+7,Iowa Hawkeyes,8,2,23,224
+7,Furman Paladins,12,0,24,208
+7,Nebraska Cornhuskers,9,2,25,156
+8,Duke Blue Devils,11,1,1,1529
+8,Michigan Wolverines,12,0,2,1472
+8,Tennessee Volunteers,10,1,3,1471
+8,Virginia Cavaliers,11,0,4,1427
+8,Kansas Jayhawks,10,1,5,1386
+8,Nevada Wolf Pack,12,0,6,1316
+8,Gonzaga Bulldogs,11,2,7,1199
+8,Michigan State Spartans,10,2,8,1146
+8,Florida State Seminoles,11,1,9,1061
+8,Virginia Tech Hokies,10,1,10,924
+8,Texas Tech Red Raiders,10,1,11,845
+8,Auburn Tigers,10,2,12,770
+8,Ohio State Buckeyes,11,1,13,737
+8,North Carolina Tar Heels,8,3,14,678
+8,Wisconsin Badgers,10,2,15,673
+8,Kentucky Wildcats,9,2,16,664
+8,Arizona State Sun Devils,9,2,17,626
+8,Marquette Golden Eagles,10,2,18,538
+8,Mississippi State Bulldogs,11,1,19,518
+8,North Carolina State Wolfpack,11,1,20,292
+8,Buffalo Bulls,11,1,21,279
+8,Houston Cougars,12,0,22,274
+8,Indiana Hoosiers,11,2,23,247
+8,Iowa Hawkeyes,10,2,24,178
+8,Oklahoma Sooners,11,1,25,163
+9,Duke Blue Devils,11,1,1,1530
+9,Michigan Wolverines,13,0,2,1478
+9,Tennessee Volunteers,11,1,3,1469
+9,Virginia Cavaliers,11,0,4,1428
+9,Kansas Jayhawks,11,1,5,1378
+9,Nevada Wolf Pack,13,0,6,1317
+9,Gonzaga Bulldogs,12,2,7,1200
+9,Michigan State Spartans,11,2,8,1146
+9,Florida State Seminoles,11,1,9,1063
+9,Virginia Tech Hokies,11,1,10,934
+9,Texas Tech Red Raiders,11,1,11,893
+9,Auburn Tigers,11,2,12,820
+9,Kentucky Wildcats,10,2,13,799
+9,Ohio State Buckeyes,12,1,14,769
+9,North Carolina Tar Heels,9,3,15,744
+9,Marquette Golden Eagles,11,2,16,595
+9,Mississippi State Bulldogs,12,1,17,572
+9,North Carolina State Wolfpack,12,1,18,424
+9,Houston Cougars,13,0,19,368
+9,Buffalo Bulls,12,1,20,353
+9,Indiana Hoosiers,11,2,21,330
+9,Wisconsin Badgers,10,3,22,250
+9,Oklahoma Sooners,11,1,23,244
+9,Nebraska Cornhuskers,11,2,24,204
+9,Iowa Hawkeyes,11,2,25,182
+10,Duke Blue Devils,12,1,1,1535
+10,Michigan Wolverines,15,0,2,1499
+10,Tennessee Volunteers,12,1,3,1481
+10,Virginia Cavaliers,13,0,4,1471
+10,Gonzaga Bulldogs,14,2,5,1319
+10,Michigan State Spartans,13,2,6,1291
+10,Kansas Jayhawks,12,2,7,1159
+10,Texas Tech Red Raiders,13,1,8,1109
+10,Virginia Tech Hokies,13,1,9,1093
+10,Nevada Wolf Pack,14,1,10,920
+10,Auburn Tigers,11,2,11,919
+10,North Carolina Tar Heels,11,3,12,889
+10,Florida State Seminoles,12,2,13,879
+10,Mississippi State Bulldogs,12,1,14,683
+10,North Carolina State Wolfpack,13,1,15,674
+10,Ohio State Buckeyes,12,2,16,620
+10,Houston Cougars,15,0,17,565
+10,Kentucky Wildcats,10,3,18,520
+10,Buffalo Bulls,13,1,19,434
+10,Iowa State Cyclones,12,2,20,344
+10,Marquette Golden Eagles,12,3,21,340
+10,Indiana Hoosiers,12,3,22,245
+10,Oklahoma Sooners,12,2,23,243
+10,St. John's Red Storm,14,1,24,221
+10,TCU Horned Frogs,12,1,25,99
+11,Duke Blue Devils,14,1,1,1558
+11,Michigan Wolverines,17,0,2,1497
+11,Tennessee Volunteers,14,1,3,1482
+11,Virginia Cavaliers,15,0,4,1473
+11,Gonzaga Bulldogs,16,2,5,1315
+11,Michigan State Spartans,15,2,6,1292
+11,Kansas Jayhawks,14,2,7,1188
+11,Texas Tech Red Raiders,15,1,8,1157
+11,Virginia Tech Hokies,14,1,9,1091
+11,Nevada Wolf Pack,16,1,10,1015
+11,Florida State Seminoles,13,3,11,918
+11,Kentucky Wildcats,12,3,12,790
+11,North Carolina Tar Heels,12,4,13,678
+11,Auburn Tigers,12,3,14,669
+11,Marquette Golden Eagles,14,3,15,668
+11,Buffalo Bulls,15,1,16,625
+11,North Carolina State Wolfpack,14,2,17,586
+11,Ole Miss Rebels,13,2,18,501
+11,Maryland Terrapins,14,3,19,412
+11,Oklahoma Sooners,13,3,20,394
+11,Houston Cougars,16,1,21,387
+11,Villanova Wildcats,13,4,22,300
+11,Iowa Hawkeyes,14,3,23,172
+11,Mississippi State Bulldogs,12,3,24,154
+11,Indiana Hoosiers,12,4,25,116
+12,Tennessee Volunteers,16,1,1,1575
+12,Duke Blue Devils,15,2,2,1520
+12,Virginia Cavaliers,16,1,3,1451
+12,Gonzaga Bulldogs,18,2,4,1374
+12,Michigan Wolverines,17,1,5,1363
+12,Michigan State Spartans,16,2,6,1355
+12,Nevada Wolf Pack,18,1,7,1143
+12,Kentucky Wildcats,14,3,8,1087
+12,Kansas Jayhawks,15,3,9,1060
+12,Virginia Tech Hokies,15,2,10,1007
+12,North Carolina Tar Heels,14,4,11,895
+12,Marquette Golden Eagles,16,3,12,861
+12,Maryland Terrapins,16,3,13,751
+12,Texas Tech Red Raiders,15,3,14,743
+12,Buffalo Bulls,17,1,14,743
+12,Auburn Tigers,13,4,16,627
+12,Houston Cougars,18,1,17,544
+12,Villanova Wildcats,14,4,18,450
+12,Iowa Hawkeyes,16,3,19,332
+12,Ole Miss Rebels,14,3,20,291
+12,North Carolina State Wolfpack,15,3,21,282
+12,Mississippi State Bulldogs,14,3,22,266
+12,Louisville Cardinals,13,5,23,230
+12,Iowa State Cyclones,14,4,24,156
+12,LSU Tigers,14,3,25,154
+13,Tennessee Volunteers,18,1,1,1575
+13,Duke Blue Devils,17,2,2,1527
+13,Virginia Cavaliers,18,1,3,1473
+13,Gonzaga Bulldogs,19,2,4,1382
+13,Michigan Wolverines,19,1,5,1381
+13,Michigan State Spartans,18,3,6,1235
+13,Kentucky Wildcats,16,3,7,1226
+13,Nevada Wolf Pack,19,1,8,1158
+13,North Carolina Tar Heels,15,4,9,1065
+13,Marquette Golden Eagles,18,3,10,973
+13,Kansas Jayhawks,16,4,11,972
+13,Virginia Tech Hokies,16,3,12,858
+13,Houston Cougars,20,1,13,795
+13,Villanova Wildcats,16,4,14,734
+13,Louisville Cardinals,15,5,15,658
+13,Texas Tech Red Raiders,16,4,16,561
+13,Purdue Boilermakers,14,6,17,532
+13,Buffalo Bulls,18,2,18,468
+13,LSU Tigers,16,3,19,435
+13,Iowa State Cyclones,15,5,20,327
+13,Maryland Terrapins,16,5,21,280
+13,Mississippi State Bulldogs,15,4,22,236
+13,North Carolina State Wolfpack,16,4,23,203
+13,Wisconsin Badgers,14,6,24,179
+13,Florida State Seminoles,15,5,25,141
+14,Tennessee Volunteers,20,1,1,1579
+14,Duke Blue Devils,19,2,2,1532
+14,Virginia Cavaliers,20,1,3,1478
+14,Gonzaga Bulldogs,21,2,4,1423
+14,Kentucky Wildcats,18,3,5,1310
+14,Nevada Wolf Pack,21,1,6,1228
+14,Michigan Wolverines,20,2,7,1217
+14,North Carolina Tar Heels,17,4,8,1167
+14,Michigan State Spartans,18,4,9,1051
+14,Marquette Golden Eagles,19,3,10,1029
+14,Virginia Tech Hokies,18,3,11,948
+14,Houston Cougars,21,1,12,838
+14,Kansas Jayhawks,17,5,13,809
+14,Villanova Wildcats,18,4,14,801
+14,Purdue Boilermakers,16,6,15,697
+14,Louisville Cardinals,16,6,16,561
+14,Iowa State Cyclones,17,5,17,545
+14,Texas Tech Red Raiders,17,5,18,482
+14,Wisconsin Badgers,16,6,19,462
+14,Iowa Hawkeyes,17,5,20,242
+14,LSU Tigers,17,4,21,205
+14,Florida State Seminoles,16,5,22,180
+14,Buffalo Bulls,19,3,23,153
+14,Maryland Terrapins,17,6,24,144
+14,Cincinnati Bearcats,19,3,25,142
+15,Tennessee Volunteers,22,1,1,1573
+15,Duke Blue Devils,21,2,2,1554
+15,Gonzaga Bulldogs,23,2,3,1457
+15,Virginia Cavaliers,20,2,4,1406
+15,Kentucky Wildcats,20,3,5,1330
+15,Michigan Wolverines,22,2,6,1253
+15,Nevada Wolf Pack,23,1,7,1230
+15,North Carolina Tar Heels,19,4,8,1178
+15,Houston Cougars,23,1,9,1022
+15,Marquette Golden Eagles,20,4,10,953
+15,Michigan State Spartans,19,5,11,948
+15,Purdue Boilermakers,17,6,12,900
+15,Villanova Wildcats,19,5,13,753
+15,Kansas Jayhawks,18,6,14,699
+15,Texas Tech Red Raiders,19,5,15,660
+15,Louisville Cardinals,17,7,16,542
+15,Florida State Seminoles,18,5,17,455
+15,Kansas State Wildcats,18,5,18,444
+15,LSU Tigers,19,4,19,437
+15,Wisconsin Badgers,17,7,20,403
+15,Iowa Hawkeyes,19,5,21,399
+15,Virginia Tech Hokies,18,5,22,393
+15,Iowa State Cyclones,18,6,23,280
+15,Maryland Terrapins,18,6,24,196
+15,Buffalo Bulls,20,3,25,170
+16,Duke Blue Devils,23,2,1,1594
+16,Gonzaga Bulldogs,25,2,2,1502
+16,Virginia Cavaliers,22,2,3,1476
+16,Kentucky Wildcats,21,4,4,1383
+16,Tennessee Volunteers,23,2,5,1376
+16,Nevada Wolf Pack,24,1,6,1240
+16,Michigan Wolverines,23,3,7,1150
+16,North Carolina Tar Heels,20,5,8,1129
+16,Houston Cougars,25,1,9,1085
+16,Michigan State Spartans,21,5,10,1046
+16,Marquette Golden Eagles,21,4,11,987
+16,Kansas Jayhawks,20,6,12,801
+16,LSU Tigers,21,4,13,773
+16,Texas Tech Red Raiders,21,5,14,733
+16,Purdue Boilermakers,18,7,15,699
+16,Florida State Seminoles,20,5,16,525
+16,Villanova Wildcats,20,6,17,519
+16,Louisville Cardinals,18,8,18,507
+16,Iowa State Cyclones,19,6,19,426
+16,Virginia Tech Hokies,20,5,20,408
+16,Iowa Hawkeyes,20,5,21,389
+16,Wisconsin Badgers,17,8,22,250
+16,Kansas State Wildcats,19,6,23,249
+16,Maryland Terrapins,19,7,24,211
+16,Buffalo Bulls,22,3,25,164
+17,Gonzaga Bulldogs,27,2,1,1569
+17,Virginia Cavaliers,24,2,2,1513
+17,Duke Blue Devils,24,3,3,1502
+17,Kentucky Wildcats,23,4,4,1418
+17,North Carolina Tar Heels,22,5,5,1326
+17,Michigan State Spartans,23,5,6,1232
+17,Tennessee Volunteers,24,3,7,1190
+17,Houston Cougars,26,1,8,1145
+17,Michigan Wolverines,24,4,9,1057
+17,Marquette Golden Eagles,23,4,10,1019
+17,Texas Tech Red Raiders,22,5,11,938
+17,Nevada Wolf Pack,25,2,12,883
+17,LSU Tigers,22,5,13,836
+17,Purdue Boilermakers,20,7,14,820
+17,Kansas Jayhawks,20,7,15,580
+17,Kansas State Wildcats,21,6,16,559
+17,Maryland Terrapins,21,7,17,549
+17,Florida State Seminoles,21,6,18,501
+17,Wisconsin Badgers,19,8,19,466
+17,Virginia Tech Hokies,21,6,20,392
+17,Buffalo Bulls,24,3,21,288
+17,Iowa Hawkeyes,21,6,22,278
+17,Cincinnati Bearcats,23,4,23,263
+17,Wofford Terriers,24,4,24,112
+17,Washington Huskies,22,5,25,92
+18,Gonzaga Bulldogs,29,2,1,1578
+18,Virginia Cavaliers,26,2,2,1553
+18,North Carolina Tar Heels,24,5,3,1428
+18,Duke Blue Devils,25,4,4,1399
+18,Tennessee Volunteers,26,3,5,1366
+18,Kentucky Wildcats,24,5,6,1274
+18,Michigan Wolverines,26,4,7,1216
+18,Texas Tech Red Raiders,24,5,8,1100
+18,Michigan State Spartans,23,6,9,1039
+18,LSU Tigers,24,5,10,1005
+18,Purdue Boilermakers,22,7,11,999
+18,Houston Cougars,27,2,12,895
+18,Kansas Jayhawks,22,7,13,798
+18,Florida State Seminoles,23,6,14,702
+18,Virginia Tech Hokies,22,6,15,668
+18,Marquette Golden Eagles,23,6,16,626
+18,Nevada Wolf Pack,26,3,17,579
+18,Kansas State Wildcats,22,7,18,499
+18,Buffalo Bulls,26,3,19,437
+18,Cincinnati Bearcats,25,4,20,408
+18,Wisconsin Badgers,20,9,21,322
+18,Wofford Terriers,26,4,22,269
+18,Villanova Wildcats,22,8,23,214
+18,Maryland Terrapins,21,9,24,207
+18,UCF Knights,22,6,25,48
+19,Gonzaga Bulldogs,29,2,1,1572
+19,Virginia Cavaliers,28,2,2,1559
+19,North Carolina Tar Heels,26,5,3,1474
+19,Kentucky Wildcats,26,5,4,1373
+19,Duke Blue Devils,26,5,5,1298
+19,Michigan State Spartans,25,6,6,1226
+19,Texas Tech Red Raiders,26,5,7,1211
+19,Tennessee Volunteers,27,4,8,1200
+19,LSU Tigers,26,5,9,1089
+19,Michigan Wolverines,26,5,10,1041
+19,Houston Cougars,29,2,11,963
+19,Florida State Seminoles,25,6,12,856
+19,Purdue Boilermakers,23,8,13,831
+19,Nevada Wolf Pack,28,3,14,684
+19,Kansas State Wildcats,24,7,15,680
+19,Virginia Tech Hokies,23,7,16,625
+19,Kansas Jayhawks,23,8,17,602
+19,Buffalo Bulls,28,3,18,539
+19,Wisconsin Badgers,22,9,19,466
+19,Wofford Terriers,28,4,20,387
+19,Maryland Terrapins,22,9,21,319
+19,Auburn Tigers,22,9,22,268
+19,Marquette Golden Eagles,23,8,23,109
+19,Cincinnati Bearcats,25,6,24,108
+19,Villanova Wildcats,22,9,25,80
