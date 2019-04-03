@@ -7,10 +7,39 @@ function buildDataPanel() {
 
 } // End buildDataPanel()
 
+
+function makeTrace(myTeam, myPlotData, myYMetric) {
+  // Extracts all data associated with myTeam from myplotData
+  // and returns trace of associated values of myYMetric
+
+  // Declare variables
+  var xPlotVals = [];
+  var yPlotVals = [];
+
+  // Filter plotData to points associated with myTeam
+  var teamData = myPlotData.filter((v,i,a) => v['Team'] == myTeam)
+
+  // Populate xPlotVals and yPlotVals
+  for (var key in teamData) {
+    var dataPoint = teamData[key];
+    xPlotVals.push(dataPoint['Week']);
+    yPlotVals.push(dataPoint[myYMetric]);
+  }
+
+  // Construct trace and return
+  return {
+    x: xPlotVals,
+    y: yPlotVals,
+    type: 'scatter',
+    name: myTeam,
+  }
+
+}
+
 function buildChart() {
     console.log("Called buildChart()")
 
-    // Store currently selected metrics
+    // Store currently selected metric
     var yMetric = d3.select("#YMetricDD").node().value; 
 
     // Load data and parse for plotting
@@ -30,53 +59,38 @@ function buildChart() {
         }
         plotData.push(dataPoint)
       }
-      //console.log(plotData)
-
-      // Parse x values for plotting and store in 'xPlotVals'
-      // var xPlotVals = [];      
-      // var xData = data['Week'];
-      // for (var key in xData) {xPlotVals.push(xData[key]);}
-      // // Get unique values
-      // xPlotVals = xPlotVals.filter((v, i, a) => a.indexOf(v) === i); 
 
       // Parse plotData into traces
 
       // Select out distinct list of teams
-      var teams = [];
+      var distinctTeamNames = [];
+      var allTeamNames = [];
       var teamData = data['Team'];
-      for (var key in teamData) {teams.push(teamData[key]);}
-      teams = teams.filter((v, i, a) => a.indexOf(v) === i); 
+      for (var key in teamData) {allTeamNames.push(teamData[key]);}
+      distinctTeamNames = allTeamNames.filter((v, i, a) => a.indexOf(v) === i); 
 
-      // @TODO For a specific team, create trace for plotting      
-      var xPlotVals = [];
-      var yPlotVals = [];
-
-      var team = 'Kentucky Wildcats'
-      var teamData = plotData.filter((v,i,a) => v['Team'] == team)
-
-      for (var key in teamData) {
-        var dataPoint = teamData[key];
-        xPlotVals.push(dataPoint['Week']);
-        yPlotVals.push(dataPoint[yMetric]);
+      var traces = [];
+      for (var key in distinctTeamNames) {
+        var teamName = distinctTeamNames[key];
+        traces.push(makeTrace(teamName, plotData, yMetric));
       }
       
-      console.log('teamData =', teamData)
-      console.log('xPlotVals =', xPlotVals)
-      console.log('yPlotVals =', yPlotVals)
+      // Create plot
+      
+      var layout = {
+        xaxis: {
+          title: 'Week',
+        },
+        yaxis: {
+          title: yMetric,
+        },
+        showlegend: true,
+        height: 600,
+        width: 1000,
+      };
 
-      var trace = {
-        x: xPlotVals,
-        y: yPlotVals,
-        type: 'scatter'
-      }
 
-      // @TODO Create plot with one specific trace
-
-      var traces = [trace];
-      var layout = {};
       Plotly.newPlot('timeseries', traces, layout);  
-
-
 
 
       // @TODO Iterate over distinct list of teams to generate traces
@@ -91,30 +105,6 @@ function buildChart() {
 
 
 
-
-
-      // // Build Timeseries Chart
-      // var trace1 = {
-      //   x: xPlotVals,
-      //   y: yPlotVals,
-      //   mode: 'markers',
-      // };
-
-      // var plotData = [trace1];
-      
-      // var layout = {
-      //   xaxis: {
-      //     title: 'Week',
-      //   },
-      //   yaxis: {
-      //     title: yMetric,
-      //   },
-      //   showlegend: false,
-      //   height: 600,
-      //   width: 1000,
-      // };
-      
-      // Plotly.newPlot('timeseries', plotData, layout);  
 
       
     }); // End promise
