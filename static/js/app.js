@@ -133,7 +133,8 @@ function parseMetrics(rawMetricList) {
 
   // Define non-metric items
   var excluded = [
-    'Team',
+    'School',
+    'Team Name',
     'Conference',
   ]
 

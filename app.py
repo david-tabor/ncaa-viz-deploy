@@ -5,7 +5,7 @@ from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 
-data = pd.read_csv('db/sample_data.csv')
+data = pd.read_csv('db/reg_season_condensed_file.csv')
 time_data = pd.read_csv('db/top_25_rankings_by_week_v2.csv')
 
 
