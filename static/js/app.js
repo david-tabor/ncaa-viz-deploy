@@ -23,45 +23,105 @@ function buildDataPanel() {
 
 } // End buildMetadata()
 
+function trimDataByConf(myData, myConference) {
+  // Returns the subset of entries in myData limited to myConference
+  if (myConference=='All') {
+    return myData
+  } else {
+    // Initialize array to hold output trimmed data
+    var outData = {};
+
+    // Initialize list of conferences 
+    var conferences = myData['Conference'];
+
+    // Count how many points are in the data
+    var n = Object.keys(conferences).length
+
+    // Find good indices of data points matching myConference
+    var goodIndices = [];
+    for (var i=0; i<n; i++) {
+      if (conferences[i] == myConference) {
+        goodIndices.push(i)
+      }
+    }
+    
+    // Create list of columns in myData
+    var cols = [];
+    for (var item in myData) {cols.push(item);} 
+    
+    // For each column, extract only the values in goodIndices
+    for (var i=0; i<cols.length; i++) {
+      var col = cols[i];
+      var dataValues = {};
+      for (var j=0; j<n; j++) {
+        if (goodIndices.includes(j)) {
+          dataValues[[j]]= myData[col][j]
+        }
+      }
+      outData[[col]] = dataValues
+    }
+
+    console.log('trimmed data =', outData)
+
+
+
+    return outData
+
+
+  }
+
+
+
+}
+
 function buildChart() {
     console.log("Called buildChart()")
 
     // Store currently selected metrics
     var xMetric = d3.select("#XMetricDD").node().value; 
     var yMetric = d3.select("#YMetricDD").node().value; 
-    var bMetric = d3.select("#BMetricDD").node().value; 
+    var bMetric = d3.select("#BMetricDD").node().value;
+    var cMetric = d3.select("#ConferenceDD").node().value; 
 
     // Load data and parse for plotting
     d3.json("/data").then(data => {
       console.log('In call to buildChart(), loaded data:', data);
 
+      var trimmedData = trimDataByConf(data, cMetric);
+      data = trimmedData
+
       // Parse x values for plotting and store in 'xPlotVals'
       var xPlotVals = [];      
       var xData = data[xMetric];
       for (var key in xData) {xPlotVals.push(xData[key]);}
-      console.log('xPlotVals =', xPlotVals)
 
       // Parse y values for plotting and store in 'yPlotVals'
       var yPlotVals = [];      
       var yData = data[yMetric];
       for (var key in yData) {yPlotVals.push(yData[key]);}
-      console.log('yPlotVals =', yPlotVals)
       
       // Parse b values for plotting and store in 'bPlotVals'
+
+      
       var bPlotVals = [];      
       var bData = data[bMetric];
       for (var key in yData) {bPlotVals.push(bData[key]);}
+      var scaleFactor = 2.0 * d3.max(bPlotVals) / (40000);
+
       console.log('bPlotVals =', bPlotVals)
-  
-      
+
+
       // Parse names for plotting and store in 'nPlotVals'
       var nPlotVals = [];      
-      var nData = data['team'];
+      var schoolData = data['School'];
+      var teamNameData = data['Team Name'];
+      var conferenceData = data['Conference'];
 
-      console.log(data)
-
-
-      for (var key in nData) {nPlotVals.push(nData[key]);}
+      for (var key in schoolData) {
+        nPlotVals.push(
+          `${schoolData[key]} ${teamNameData[key]} (${conferenceData[key]} Conference)`
+        )
+      }
       console.log('nPlotVals =', nPlotVals)
   
       // Build Bubble Chart
@@ -73,6 +133,8 @@ function buildChart() {
         marker: {
           //color: colors,
           size: bPlotVals,
+          text: nPlotVals,
+          sizemode: 'area',
         }
       };
 
@@ -159,16 +221,12 @@ function parseMetrics(rawMetricList) {
 } // End define parseMetrics()
 
 function init() {
-
   d3.json("/data").then(data => {
-    //console.log('In call to init(), loaded data:', data);
-    
     // Create 'cols' as list of columns in loaded csv 
     var cols = [];
     for (var item in data) {cols.push(item);} 
 
     // Create 'metrics' after parsing out non-metric items
-    // console.log(parseMetrics(cols));
     var metrics = parseMetrics(cols);
     
     // Populate X-Axis Metric Dropdown
@@ -189,7 +247,6 @@ function init() {
         .property("value", metrics[i])
     }
 
-
     // Populate Bubble Metric Dropdown
     for (var i=0; i<metrics.length; i++) {
       var metric = metrics[i];
@@ -197,6 +254,24 @@ function init() {
         .append("option")
         .text(metrics[i])
         .property("value", metrics[i])
+    }
+
+    // Build list of conferences
+    var conferences= [];
+    var allConferences = [];
+    var conferenceData = data['Conference']
+    for (key in conferenceData) {allConferences.push(conferenceData[key]);}
+    conferences = allConferences.filter((v,i,a) => a.indexOf(v)===i);
+    conferences.push('All')
+    conferences.sort();
+
+    // Populate Conference Dropdown
+    for (var i=0; i<conferences.length; i++) {
+      var conference = conferences[i];
+      d3.select('#ConferenceDD')
+        .append("option")
+        .text(conference)
+        .property("value", conference)
     }
 
     // Initial build of chart
@@ -223,9 +298,11 @@ function bMetricChanged() {
   buildChart();
 }
 
-
-
-
+function conferenceChanged() {
+  console.log("Call made to conferenceChanged()");
+  console.log("Rebuilding chart with call to buildChart()");
+  buildChart();
+}
 
 // Initialize the dashboard
 init();
