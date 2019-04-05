@@ -31,5 +31,11 @@ def timeseries():
     return render_template('timeseries.html')
 
 
+
+@app.route("/map")
+def us_map():
+    """Return the homepage."""
+    return render_template('us-map.html')
+
 if __name__ == "__main__":
     app.run()

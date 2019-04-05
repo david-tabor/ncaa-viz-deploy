@@ -1,45 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+     google.charts.load('current', {
+       'packages': ['geochart'],
+       // Note: you will need to get a mapsApiKey for your project.
+       // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+       'mapsApiKey': 'AIzaSyA8ezXHrErQ7xyZ76JrTTZJ0WakmYa_Yuc'
+     });
+     google.charts.setOnLoadCallback(drawMarkersMap);
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>NCAA Dashboard</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City',   'Population', 'Area'],
+        ['Rome',      2761477,    1285.31],
+        ['Milan',     1324110,    181.76],
+        ['Naples',    959574,     117.27],
+        ['Turin',     907563,     130.17],
+        ['Palermo',   655875,     158.9],
+        ['Genoa',     607906,     243.60],
+        ['Bologna',   380181,     140.7],
+        ['Florence',  371282,     102.41],
+        ['Fiumicino', 67370,      213.44],
+        ['Anzio',     52192,      43.43],
+        ['Ciampino',  38262,      11]
+      ]);
 
-<body>
+      var options = {
+        region: 'US',
+        displayMode: 'markers',
+        colorAxis: {colors: ['green', 'blue']}
+      };
 
-  <div class="container">
-    
-    
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1> NCAA Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
-      </div>
-    </div>
-
-
-
-    <div class="row">
-        <div id="us-map">   
-
-        </div>
-
-    </div>
-  </div>
-
-
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="{{ url_for('static', filename='js/bonus.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
-</body>
-
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
 </html>
